@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import com.algo.android.algoapp.Algos.DP_RodCutting;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,8 +57,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,AlgoActivity.class);
-                intent.putExtra("data",chosenAlgo);
+                Intent intent = null;
+
+                // Switch between diff Activities
+                // Have seperate activity for each Algo
+                switch (chosenAlgo){
+                    case "Rod cutting":
+                        intent = new Intent(MainActivity.this,DP_RodCutting.class);
+                }
                 startActivity(intent);
             }
         });

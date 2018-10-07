@@ -1,9 +1,72 @@
 package com.algo.android.algoapp.Algos;
 
-public class DP_RodCutting {
-    public static void main(String[] args) {
-        int []price = {-1 , 1  , 5,   8,   9,  10,  17,  17,  20};
-        System.out.println(cutRod(price,price.length));
+import android.app.Activity;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.EditText;
+
+import com.algo.android.algoapp.MyAdapter;
+import com.algo.android.algoapp.R;
+
+public class DP_RodCutting extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_dp__rod_cuttings);
+
+        final EditText editText = findViewById(R.id.noOfTerms);
+        Button button = findViewById(R.id.button);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int no = Integer.parseInt(editText.getText().toString());
+
+                hideKeyboardFrom(DP_RodCutting.this,editText);
+
+                View view1 =LayoutInflater.from(DP_RodCutting.this).inflate(R.layout.dialogbox_rodcutting,null);
+                RecyclerView recyclerView = view1.findViewById(R.id.recyclerView);
+                recyclerView.setLayoutManager(new LinearLayoutManager(DP_RodCutting.this));
+                recyclerView.setAdapter(new MyAdapter(no));
+
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(DP_RodCutting.this);
+                builder.setView(view1).setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int id) {
+
+                    }
+                }).setTitle("Enter Data")
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                            }
+                        });
+
+
+                AlertDialog dialog = builder.create();
+
+                dialog.getWindow().setSoftInputMode (WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+
+                dialog.show();
+
+            }
+        });
+    }
+
+    public static void hideKeyboardFrom(Context context, View view) {
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
     static int cutRod(int[]price,int n){

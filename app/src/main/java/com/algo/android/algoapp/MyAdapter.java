@@ -13,7 +13,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     int size;
 
-    MyAdapter(int size){
+    public MyAdapter(int size){
         this.size=size;
     }
 
@@ -26,7 +26,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
+    public void onBindViewHolder(@NonNull final MyViewHolder myViewHolder, int i) {
         myViewHolder.mTextView.setText("Index "+i);
 //        myViewHolder.mEditText.setText("23");
     }
