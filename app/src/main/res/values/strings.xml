@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AlgoApp</string>
+    <string name="algo_spinner_title">Select Algorithm</string>
+    <string name="button">OK</string>
 </resources>

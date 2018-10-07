@@ -1,64 +1,120 @@
 package com.algo.android.algoapp;
-
-import android.app.Activity;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
+import android.os.Bundle;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.Spinner;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.ArrayList;
+import java.util.List;
 
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+
+    private Spinner spinner1;
+    private Spinner spinner2;
+    private Button button;
+    private ArrayAdapter<String> adapter1;
+    private ArrayAdapter<String> adapter2;
+    private String chosenAlgo = "";
+
+    List<String> algos;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final EditText editText = findViewById(R.id.noOfTerms);
-        Button button = findViewById(R.id.button);
+        spinner1 = (Spinner) findViewById(R.id.algo_spinner);
+        spinner2 = (Spinner) findViewById(R.id.algo_spinner2);
+        spinner2.setEnabled(false);
+        button = (Button) findViewById(R.id.button);
+
+        spinner1.setOnItemSelectedListener(this);
+        List<String> categories = new ArrayList<String>();
+        categories.add("Select a technique");
+        categories.add("Dynamic Programming");
+        categories.add("Greedy");
+        categories.add("Divide and Conquer");
+
+
+
+        algos = new ArrayList<String>();
+        clear();
+
+        adapter1 = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,categories);
+        adapter1.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        spinner1.setAdapter(adapter1);
+
+        adapter2 = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,algos);
+        adapter2.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        spinner2.setAdapter(adapter2);
+        spinner2.setOnItemSelectedListener(this);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                int no = Integer.parseInt(editText.getText().toString());
-                System.out.println(no);
-
-//                hideKeyboardFrom(MainActivity.this,editText);
-
-                View view1 =LayoutInflater.from(MainActivity.this).inflate(R.layout.dialogbox_rodcutting,null);
-                RecyclerView recyclerView = view1.findViewById(R.id.recyclerView);
-                recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-                recyclerView.setAdapter(new MyAdapter(no));
-
-//                InputMethodManager im = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-//                im.showSoftInput(recyclerView, 0);
-
-                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-                builder.setView(view1).setPositiveButton("sdf", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int id) {
-                        // sign in the user ...
-                    }
-                }).setTitle("Enter Data")
-                        .setNegativeButton("sdfsd", new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int id) {
-                            }
-                        })
-                        .create().show();
-
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,AlgoActivity.class);
+                intent.putExtra("data",chosenAlgo);
+                startActivity(intent);
             }
         });
     }
 
-    public static void hideKeyboardFrom(Context context, View view) {
-        InputMethodManager imm = (InputMethodManager) context.getSystemService(Activity.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+        Spinner spin = (Spinner) parent;
+        button.setEnabled(false);
+
+        String item = parent.getItemAtPosition(position).toString();
+        if(spin.getId() == R.id.algo_spinner){
+            spinner2.setEnabled(false);
+            if(item.contentEquals("Dynamic Programming")){
+                clear();
+
+                algos.add("Rod cutting");
+                algos.add("0-1 Knapsack");
+
+                spinner2.setEnabled(true);
+
+            }
+            else if(item.contentEquals("Greedy")){
+                clear();
+                algos.add("Fractional Kanpsack");
+                spinner2.setOnItemSelectedListener(this);
+                spinner2.setEnabled(true);
+
+            }
+            else if(item.contentEquals("Divide and Conquer")){
+                clear();
+                algos.add("Merge Sort");
+                algos.add("Quick Sort");
+                spinner2.setOnItemSelectedListener(this);
+                spinner2.setEnabled(true);
+
+            }
+
+        }else {
+            if(!item.contentEquals("Select an algorithm")){
+                chosenAlgo = item;
+                button.setEnabled(true);
+
+            }
+        }
+
     }
+
+    private void clear() {
+        algos.clear();
+        algos.add("Select an algorithm");
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+
 }
