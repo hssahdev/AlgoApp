@@ -2,6 +2,8 @@ package com.algo.android.algoapp;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +14,11 @@ import android.widget.TextView;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     int size;
+    int []arr;
 
     public MyAdapter(int size){
         this.size=size;
+        arr=new int[size];
     }
 
     @NonNull
@@ -26,14 +30,33 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final MyViewHolder myViewHolder, int i) {
+    public void onBindViewHolder(@NonNull final MyViewHolder myViewHolder, final int i) {
         myViewHolder.mTextView.setText("Index "+i);
-//        myViewHolder.mEditText.setText("23");
+        myViewHolder.mEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                arr[i]=Integer.parseInt(editable.toString());
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return size;
+    }
+
+    public int[] getEnteredData(){
+        return arr;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

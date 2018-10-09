@@ -9,8 +9,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/index"
         android:layout_margin="5dp"
-        android:layout_weight="1"
-        android:text="Index 0:"/>
+        android:layout_weight="1" />
 
     <EditText
         android:layout_width="wrap_content"
