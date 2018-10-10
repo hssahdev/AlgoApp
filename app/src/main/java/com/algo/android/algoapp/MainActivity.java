@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        startActivity(new Intent(this,DP_RodCutting.class));
+//        startActivity(new Intent(this,DP_RodCutting.class));
 
         spinner1 = (Spinner) findViewById(R.id.algo_spinner);
         spinner2 = (Spinner) findViewById(R.id.algo_spinner2);
