@@ -16,10 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Algos.DP_RodCutting"
+        <activity
+            android:name=".Algos.DP_RodCutting"
             android:label="RodCutting"
             android:parentActivityName=".MainActivity"
-            android:windowSoftInputMode="stateHidden|adjustPan"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity android:name=".Algos.DP_Knapsack01"
+            android:label="Knapsack 0-1"
+            android:parentActivityName=".MainActivity"
             ></activity>
     </application>
 

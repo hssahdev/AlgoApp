@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import com.algo.android.algoapp.Algos.DP_Knapsack01;
 import com.algo.android.algoapp.Algos.DP_RodCutting;
 
 import java.util.ArrayList;
@@ -66,6 +67,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 switch (chosenAlgo){
                     case "Rod cutting":
                         intent = new Intent(MainActivity.this,DP_RodCutting.class);
+                        break;
+                    case "0-1 Knapsack":
+                        intent=new Intent(MainActivity.this,DP_Knapsack01.class);
                 }
                 startActivity(intent);
             }
