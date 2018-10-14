@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.algo.android.algoapp.EnteringData;
 import com.algo.android.algoapp.R;
@@ -31,7 +31,7 @@ public class DP_RodCutting extends AppCompatActivity implements EnteringData.OnF
                 hideKeyboardFrom(DP_RodCutting.this,editText);
 
                 EnteringData ed = EnteringData.newInstance(no);
-                getSupportFragmentManager().beginTransaction().add(R.id.enteringData,ed).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.enteringData,ed).commit();
 
 
 
@@ -91,6 +91,10 @@ public class DP_RodCutting extends AppCompatActivity implements EnteringData.OnF
     @Override
     public void onFragmentInteraction(int []k) {
 //        cutRod(k,k.length);
-        Toast.makeText(this, "Max Price: "+cutRod(k,k.length), Toast.LENGTH_SHORT).show();
+        int a[]= new int[k.length+1];
+        a[0]=-1;
+        for(int i=1;i<a.length;i++)
+            a[i]=k[i-1];
+        ((TextView)findViewById(R.id.rodcutting_answer)).setText("Maximum Obtainable Value is "+cutRod(a,a.length));
     }
 }

@@ -31,7 +31,17 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder myViewHolder, final int i) {
-        myViewHolder.mTextView.setText("Index "+i);
+
+        if(i==0)
+            myViewHolder.mTextView.setText("Price for "+(i+1)+"st piece:");
+        else if(i==1)
+            myViewHolder.mTextView.setText("Price for "+(i+1)+"nd piece:");
+        else if(i==2)
+            myViewHolder.mTextView.setText("Price for "+(i+1)+"rd piece:");
+        else
+            myViewHolder.mTextView.setText("Price for "+(i+1)+"th piece:");
+
+
         myViewHolder.mEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
