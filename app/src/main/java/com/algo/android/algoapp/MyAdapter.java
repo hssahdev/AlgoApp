@@ -55,6 +55,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
             @Override
             public void afterTextChanged(Editable editable) {
+                if(editable.length()!=0)
                 arr[i]=Integer.parseInt(editable.toString());
             }
         });
