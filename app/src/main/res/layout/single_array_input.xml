@@ -30,6 +30,4 @@
         android:id="@+id/noToEnter">
     </EditText>
 
-
-
 </LinearLayout>

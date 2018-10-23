@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="gfhjgfgjgf"
+            android:layout_gravity="center"
+            android:id="@+id/text1"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            />
+
+        <EditText
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:inputType="number"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:focusable="true"
+            android:background="@drawable/edittext_background"
+            android:focusableInTouchMode="true"
+            android:id="@+id/edittext1">
+        </EditText>
+
+    </LinearLayout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="gfhjgfgjgf"
+            android:layout_gravity="center"
+            android:id="@+id/text2"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            />
+
+        <EditText
+            android:layout_width="80dp"
+            android:layout_height="35dp"
+            android:inputType="number"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:focusable="true"
+            android:background="@drawable/edittext_background"
+            android:focusableInTouchMode="true"
+            android:id="@+id/edittext2">
+        </EditText>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,4 +1,4 @@
-package com.algo.android.algoapp;
+package com.algo.android.algoapp.Adapters;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -10,13 +10,15 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.algo.android.algoapp.R;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+
+public class SingleArrayInputAdapter extends RecyclerView.Adapter<SingleArrayInputAdapter.MyViewHolder> {
 
     int size;
     int []arr;
 
-    public MyAdapter(int size){
+    public SingleArrayInputAdapter(int size){
         this.size=size;
         arr=new int[size];
     }
@@ -25,7 +27,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.enteringdataview,viewGroup,false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.single_array_input,viewGroup,false);
         return new MyViewHolder(view);
     }
 
@@ -56,7 +58,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             @Override
             public void afterTextChanged(Editable editable) {
                 if(editable.length()!=0)
-                arr[i]=Integer.parseInt(editable.toString());
+                    arr[i]=Integer.parseInt(editable.toString());
             }
         });
     }

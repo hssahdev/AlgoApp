@@ -4,16 +4,18 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.algo.android.algoapp.EnteringData;
+import com.algo.android.algoapp.Adapters.SingleArrayInputAdapter;
 import com.algo.android.algoapp.R;
 
-public class DP_RodCutting extends AppCompatActivity implements EnteringData.OnFragmentInteractionListener {
+public class DP_RodCutting extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,30 +32,24 @@ public class DP_RodCutting extends AppCompatActivity implements EnteringData.OnF
 
                 hideKeyboardFrom(DP_RodCutting.this,editText);
 
-                EnteringData ed = EnteringData.newInstance(no);
-                getSupportFragmentManager().beginTransaction().replace(R.id.enteringData,ed).commit();
+//                EnteringData ed = EnteringData.newInstance(no);
+//                getSupportFragmentManager().beginTransaction().replace(R.id.enteringData,ed).commit();
 
+                findViewById(R.id.rodcutting_entering_data).setVisibility(View.VISIBLE);
 
+                RecyclerView recyclerView = findViewById(R.id.recyclerView);
+                recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+                final SingleArrayInputAdapter adapter  = new SingleArrayInputAdapter(no);
+                recyclerView.setAdapter(adapter);
 
-//                AlertDialog.Builder builder = new AlertDialog.Builder(DP_RodCutting.this);
-//                builder.setView(view1).setPositiveButton("OK", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int id) {
-//
-//                    }
-//                }).setTitle("Enter Data")
-//                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-//                            public void onClick(DialogInterface dialog, int id) {
-//                            }
-//                        });
-//
-//
-//                AlertDialog dialog = builder.create();
-//
-//                dialog.getWindow().setSoftInputMode (WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
-//
-//                dialog.show();
-
+                findViewById(R.id.submitDataButton).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        int []k = adapter.getEnteredData();
+                        onButtonPressed(k);
+                        hideKeyboardFrom(getApplicationContext(),view);
+                    }
+                });
             }
         });
     }
@@ -88,9 +84,7 @@ public class DP_RodCutting extends AppCompatActivity implements EnteringData.OnF
         return maxCost;
     }
 
-    @Override
-    public void onFragmentInteraction(int []k) {
-//        cutRod(k,k.length);
+    public void onButtonPressed(int []k) {
         int a[]= new int[k.length+1];
         a[0]=-1;
         for(int i=1;i<a.length;i++)
