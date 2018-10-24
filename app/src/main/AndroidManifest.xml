@@ -25,9 +25,15 @@
             android:name=".Algos.DP_Knapsack01"
             android:label="Knapsack 0-1"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".Algos.DP_CoinChange" />
-        <activity android:name=".Algos.DandC_mergeSort" />
-        <activity android:name=".Adapters.ArrayOutputAdapter"></activity>
+        <activity android:name=".Algos.DP_CoinChange"
+            android:label="CoinChange"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".Algos.DandC_mergeSort"
+            android:label="Merge Sort"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".Algos.Greedy_FractonalKnapsack"
+            android:label="Fractional Knapsack"
+            android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>
