@@ -12,6 +12,7 @@ import com.algo.android.algoapp.Algos.DP_CoinChange;
 import com.algo.android.algoapp.Algos.DP_Knapsack01;
 import com.algo.android.algoapp.Algos.DP_RodCutting;
 import com.algo.android.algoapp.Algos.DandC_mergeSort;
+import com.algo.android.algoapp.Algos.Greedy_FractonalKnapsack;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -82,6 +83,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     case "Quick Sort":
                         intent=new Intent(MainActivity.this,DandC_mergeSort.class);
                         break;
+                    case "Fractional Kanpsack":
+                        intent=new Intent(MainActivity.this,Greedy_FractonalKnapsack.class);
+                        break;
+
                 }
                 startActivity(intent);
             }

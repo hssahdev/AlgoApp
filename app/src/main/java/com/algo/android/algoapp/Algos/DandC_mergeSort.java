@@ -12,7 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.algo.android.algoapp.Adapters.ArrayOutputAdapter;
-import com.algo.android.algoapp.Adapters.DoubleArrayInputAdapter;
+
 import com.algo.android.algoapp.Adapters.SingleArrayInputAdapter;
 import com.algo.android.algoapp.R;
 
