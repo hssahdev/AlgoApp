@@ -29,11 +29,11 @@
             android:label="CoinChange"
             android:parentActivityName=".MainActivity"/>
         <activity android:name=".Algos.DandC_mergeSort"
-            android:label="Merge Sort"
+            android:label="Sorting"
             android:parentActivityName=".MainActivity"/>
         <activity android:name=".Algos.Greedy_FractonalKnapsack"
             android:label="Fractional Knapsack"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>
