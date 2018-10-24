@@ -58,11 +58,18 @@ public class DandC_mergeSort extends AppCompatActivity {
 
     private void getAnswer(int no,int []arr){
         Arrays.sort(arr);
-
+        print(arr);
         RecyclerView recyclerView = findViewById(R.id.mergeSort_answer_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         final ArrayOutputAdapter adapter  = new ArrayOutputAdapter(no,arr);
         recyclerView.setAdapter(adapter);
+    }
+
+    void print(int arr[]){
+        int n = arr.length;
+        for(int i = 0; i<n ; ++i){
+            System.out.print(arr[i] + " ");
+        }
     }
 
 }

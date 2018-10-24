@@ -123,6 +123,7 @@
             android:layout_height="wrap_content"
             android:descendantFocusability="afterDescendants"
             android:overScrollMode="never"
+            android:layout_gravity="center"
             android:id="@+id/mergeSort_answer_recyclerView"/>
 
         </LinearLayout>
