@@ -35,13 +35,13 @@ public class SingleArrayInputAdapter extends RecyclerView.Adapter<SingleArrayInp
     public void onBindViewHolder(@NonNull final MyViewHolder myViewHolder, final int i) {
 
         if(i==0)
-            myViewHolder.mTextView.setText("Price for "+(i+1)+"st piece:");
+            myViewHolder.mTextView.setText("Value for "+(i+1)+"st element:");
         else if(i==1)
-            myViewHolder.mTextView.setText("Price for "+(i+1)+"nd piece:");
+            myViewHolder.mTextView.setText("Value for "+(i+1)+"nd element:");
         else if(i==2)
-            myViewHolder.mTextView.setText("Price for "+(i+1)+"rd piece:");
+            myViewHolder.mTextView.setText("Value for "+(i+1)+"rd element:");
         else
-            myViewHolder.mTextView.setText("Price for "+(i+1)+"th piece:");
+            myViewHolder.mTextView.setText("Value for "+(i+1)+"th element:");
 
 
         myViewHolder.mEditText.addTextChangedListener(new TextWatcher() {
