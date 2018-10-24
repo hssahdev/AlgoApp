@@ -55,6 +55,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:orientation="vertical"
             android:layout_height="wrap_content">
 
             <android.support.v7.widget.RecyclerView
@@ -113,7 +114,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold"
                 tools:text="Sorted array is - " />
-        </LinearLayout>
+
 
 
         <android.support.v7.widget.RecyclerView
@@ -122,6 +123,8 @@
             android:descendantFocusability="afterDescendants"
             android:overScrollMode="never"
             android:id="@+id/mergeSort_answer_recyclerView"/>
+
+        </LinearLayout>
 
     </ScrollView>
 
