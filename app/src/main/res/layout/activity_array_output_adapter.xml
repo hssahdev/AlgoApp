@@ -13,6 +13,9 @@
         tools:text="gfhjgfgjgf"
         android:layout_gravity="center"
         android:id="@+id/index"
+        android:text="aasasd"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
         android:layout_weight="1"
         android:layout_margin="5dp"
         />
