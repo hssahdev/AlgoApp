@@ -8,8 +8,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
+import com.algo.android.algoapp.Algos.DP_CoinChange;
 import com.algo.android.algoapp.Algos.DP_Knapsack01;
 import com.algo.android.algoapp.Algos.DP_RodCutting;
+import com.algo.android.algoapp.Algos.DandC_mergeSort;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,6 +72,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                         break;
                     case "0-1 Knapsack":
                         intent=new Intent(MainActivity.this,DP_Knapsack01.class);
+                        break;
+                    case "Coin Change":
+                        intent=new Intent(MainActivity.this,DP_CoinChange.class);
+                        break;
+                    case "Merge Sort":
+                        intent=new Intent(MainActivity.this,DandC_mergeSort.class);
+                        break;
                 }
                 startActivity(intent);
             }
@@ -90,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
                 algos.add("Rod cutting");
                 algos.add("0-1 Knapsack");
-
+                algos.add("Coin Change");
                 spinner2.setEnabled(true);
 
             }
