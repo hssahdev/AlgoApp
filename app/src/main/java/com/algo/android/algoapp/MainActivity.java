@@ -79,6 +79,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     case "Merge Sort":
                         intent=new Intent(MainActivity.this,DandC_mergeSort.class);
                         break;
+                    case "Quick Sort":
+                        intent=new Intent(MainActivity.this,DandC_mergeSort.class);
+                        break;
                 }
                 startActivity(intent);
             }
