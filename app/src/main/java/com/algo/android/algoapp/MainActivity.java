@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         categories.add("Dynamic Programming");
         categories.add("Greedy");
         categories.add("Divide and Conquer");
-
+        //categories.add("Graph Traversal");
 
 
         algos = new ArrayList<String>();
