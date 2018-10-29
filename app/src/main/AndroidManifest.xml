@@ -25,15 +25,23 @@
             android:name=".Algos.DP_Knapsack01"
             android:label="Knapsack 0-1"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".Algos.DP_CoinChange"
+        <activity
+            android:name=".Algos.DP_CoinChange"
             android:label="CoinChange"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".Algos.DandC_mergeSort"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Algos.DandC_mergeSort"
             android:label="Sorting"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".Algos.Greedy_FractonalKnapsack"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Algos.Greedy_FractonalKnapsack"
             android:label="Fractional Knapsack"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".Adapters.GraphOutputAdapter" />
+        <activity android:name=".Algos.Greedy_Kruskal" />
+        <activity android:name=".Algos.Greedy_Djaktra" />
+        <activity android:name=".Algos.Greedy_Prims" />
+        <activity android:name=".Algos.DP_Belllmanford"></activity>
     </application>
 
 </manifest>
