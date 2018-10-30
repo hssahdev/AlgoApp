@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         tools:text="gfhjgfgjgf"
         android:layout_gravity="center"
-        android:id="@+id/vertex1"
+        android:id="@+id/index"
         android:text="aasasd"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp"
@@ -20,31 +20,7 @@
         android:layout_margin="5dp"
         />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="gfhjgfgjgf"
-        android:layout_gravity="center"
-        android:id="@+id/vertex2"
-        android:text="aasasd"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp"
-        android:layout_weight="1"
-        android:layout_margin="5dp"
-        />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="gfhjgfgjgf"
-        android:layout_gravity="center"
-        android:id="@+id/weight"
-        android:text="aasasd"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="18sp"
-        android:layout_weight="1"
-        android:layout_margin="5dp"
-        />
 
 
 </LinearLayout>

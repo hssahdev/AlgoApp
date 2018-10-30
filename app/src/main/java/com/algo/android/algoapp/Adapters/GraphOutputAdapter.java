@@ -57,6 +57,7 @@ public class GraphOutputAdapter extends RecyclerView.Adapter<GraphOutputAdapter.
 
         TextView mTextView;
 
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             mTextView=itemView.findViewById(R.id.index);

@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.algo.android.algoapp.Adapters.DoubleArrayInputAdapter;
+
 import com.algo.android.algoapp.R;
 
 public class DP_Knapsack01 extends AppCompatActivity {
