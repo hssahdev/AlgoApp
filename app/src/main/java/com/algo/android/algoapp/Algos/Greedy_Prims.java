@@ -16,7 +16,7 @@ public class Greedy_Prims extends AppCompatActivity {
 
 
 
-public class PrimsAlgorithm{
+ class PrimsAlgorithm{
 
     public static void makeMST(int[][]edges, int parent[], int weight[], int start, boolean[] visited){
         int n = edges.length;
@@ -52,46 +52,46 @@ public class PrimsAlgorithm{
     }
 
 
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-
-        Scanner s = new Scanner(System.in);
-        int V = s.nextInt();
-        int E = s.nextInt();
-        int p = 0;
-        int [][]edges = new int[V][V];
-        boolean visited[] = new boolean[V];
-        for(int i = 0; i<E; ++i){
-            int x = s.nextInt();
-            int y = s.nextInt();
-            int z = s.nextInt();
-            edges[x][y] = z;
-            edges[y][x] = z;
-            p=x;
-        }
-        p = 0 ;
-        int parent[] = new int[V];
-        int weight[] = new int[V];
-        parent[p] = -1;
-        weight[p] = 0;
-        for(int i = 0; i<V; ++i){
-            if(i==p)
-                continue;
-            parent[i] = -1;
-            weight[i] = Integer.MAX_VALUE;
-        }
-        makeMST(edges, parent, weight, p, visited);
-        for(int i = 0; i<V; ++i){
-            if(i==p)
-                continue;
-            if(i<parent[i]){
-                System.out.println(i + " " + parent[i] + " " + weight[i]);
-            }
-            else{
-                System.out.println(parent[i] + " " + i + " " + weight[i]);
-            }
-        }
-        s.close();
-    }
+//    public static void main(String[] args) {
+//        // TODO Auto-generated method stub
+//
+//        Scanner s = new Scanner(System.in);
+//        int V = s.nextInt();
+//        int E = s.nextInt();
+//        int p = 0;
+//        int [][]edges = new int[V][V];
+//        boolean visited[] = new boolean[V];
+//        for(int i = 0; i<E; ++i){
+//            int x = s.nextInt();
+//            int y = s.nextInt();
+//            int z = s.nextInt();
+//            edges[x][y] = z;
+//            edges[y][x] = z;
+//            p=x;
+//        }
+//        p = 0 ;
+//        int parent[] = new int[V];
+//        int weight[] = new int[V];
+//        parent[p] = -1;
+//        weight[p] = 0;
+//        for(int i = 0; i<V; ++i){
+//            if(i==p)
+//                continue;
+//            parent[i] = -1;
+//            weight[i] = Integer.MAX_VALUE;
+//        }
+//        makeMST(edges, parent, weight, p, visited);
+//        for(int i = 0; i<V; ++i){
+//            if(i==p)
+//                continue;
+//            if(i<parent[i]){
+//                System.out.println(i + " " + parent[i] + " " + weight[i]);
+//            }
+//            else{
+//                System.out.println(parent[i] + " " + i + " " + weight[i]);
+//            }
+//        }
+//        s.close();
+//    }
 
 }

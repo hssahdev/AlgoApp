@@ -1,9 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".Algos.Greedy_Djaktra">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:paddingTop="5dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter no of edges:"
+            android:layout_margin="10dp"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:layout_gravity="center" />
+
+        <EditText
+            android:layout_width="20dp"
+            android:layout_height="match_parent"
+            android:layout_margin="2dp"
+            android:inputType="number"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:id="@+id/dijstra_noOfTerms"
+            android:background="@drawable/edittext_background"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Base.TextAppearance.AppCompat.Widget.Button.Colored"
+            android:backgroundTint="@color/colorAccent"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/dijkstra_button"
+            android:text="Enter"/>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dijkstra_recycler"/>
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="5dp"-->
+        <!--android:paddingLeft="60dp"-->
+        <!--android:paddingTop="5dp"-->
+        <!--android:orientation="horizontal">-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Enter no of vertices:"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textSize="20sp"-->
+            <!--android:layout_gravity="center"/>-->
+
+        <!--<EditText-->
+            <!--android:layout_width="40dp"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_margin="2dp"-->
+            <!--android:inputType="number"-->
+            <!--android:gravity="center"-->
+            <!--android:id="@+id/dijstra_noOfVertices"-->
+            <!--android:background="@drawable/edittext_background"-->
+            <!--/>-->
+
+    <!--</LinearLayout>-->
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Base.TextAppearance.AppCompat.Widget.Button.Colored"
+        android:backgroundTint="@color/colorAccent"
+        android:text="Done"
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center"
+        android:id="@+id/dijkstra_submitDataButton"/>
+
+
+
+</LinearLayout>
