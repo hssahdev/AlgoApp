@@ -9,9 +9,7 @@ package com.algo.android.algoapp.Algos;
         import android.widget.Button;
         import android.widget.EditText;
         import android.widget.TextView;
-        import android.widget.Toast;
 
-        import com.algo.android.algoapp.Adapters.DoubleArrayInputAdapter;
         import com.algo.android.algoapp.Adapters.SingleArrayInputAdapter;
         import com.algo.android.algoapp.R;
 
