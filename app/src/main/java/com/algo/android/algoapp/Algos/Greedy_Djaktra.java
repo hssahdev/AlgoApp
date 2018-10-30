@@ -1,11 +1,15 @@
 package com.algo.android.algoapp.Algos;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.EditText;
 
+import com.algo.android.algoapp.Adapters.TrippleArrayInputAdapter;
+import com.algo.android.algoapp.Edge;
 import com.algo.android.algoapp.R;
-
-import java.util.Scanner;
 
 public class Greedy_Djaktra extends AppCompatActivity {
 
@@ -13,6 +17,40 @@ public class Greedy_Djaktra extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_greedy__djaktra);
+
+
+        findViewById(R.id.dijkstra_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int noOfEdges = Integer.parseInt(((EditText)findViewById(R.id.dijstra_noOfTerms)).toString().trim());
+                final TrippleArrayInputAdapter adapter = new TrippleArrayInputAdapter(noOfEdges);
+                RecyclerView recyclerView = findViewById(R.id.dijkstra_recycler);
+                recyclerView.setLayoutManager(new LinearLayoutManager(Greedy_Djaktra.this));
+                recyclerView.setAdapter(adapter);
+
+                findViewById(R.id.dijkstra_submitDataButton).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+//                        int noOfVertices = Integer.parseInt(((EditText)findViewById(R.id.dijstra_noOfVertices)).toString().trim());
+                        Edge edges[]= adapter.getInputArr();
+
+                        int a[][] = new int[edges.length][2];
+                        int weight[] = new int[edges.length];
+                        for(int i=0;i<edges.length;i++){
+                            a[i][0] = edges[i].source;
+                            a[i][1] = edges[i].dest;
+                            weight[i] = edges[i].weight;
+                        }
+
+                        DijkstrasAlgorithm.makeMST(a,weight, new boolean[edges.length]);
+
+                    }
+                });
+            }
+        });
+
+
+
     }
 }
 
@@ -20,7 +58,7 @@ public class Greedy_Djaktra extends AppCompatActivity {
  class DijkstrasAlgorithm {
 
 
-    private static void makeMST(int[][] edges, int[] distance, int p, boolean[] visited) {
+    public static void makeMST(int[][] edges, int[] distance, boolean[] visited) {
 
         int n = edges.length;
 
@@ -58,39 +96,39 @@ public class Greedy_Djaktra extends AppCompatActivity {
     }
 
 
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-
-        Scanner s = new Scanner(System.in);
-        int V = s.nextInt();
-        int E = s.nextInt();
-        int p = 0;
-        int [][]edges = new int[V][V];
-        boolean visited[] = new boolean[V];
-        for(int i = 0; i<E; ++i){
-            int x = s.nextInt();
-            int y = s.nextInt();
-            int z = s.nextInt();
-            edges[x][y] = z;
-            edges[y][x] = z;
-            p=x;
-        }
-        p = 0 ;
-
-        int distance[] = new int[V];
-        distance[0] = 0;
-        for(int i = 0; i<V; ++i){
-            if(i==p)
-                continue;
-
-            distance[i] = Integer.MAX_VALUE;
-        }
-        makeMST(edges, distance, p, visited);
-        for(int i = 0; i<V; ++i){
-            System.out.println(i + " " + distance[i]);
-        }
-        s.close();
-    }
+//    public static void main(String[] args) {
+//        // TODO Auto-generated method stub
+//
+//        Scanner s = new Scanner(System.in);
+//        int V = s.nextInt();
+//        int E = s.nextInt();
+//        int p = 0;
+//        int [][]edges = new int[V][V];
+//        boolean visited[] = new boolean[V];
+//        for(int i = 0; i<E; ++i){
+//            int x = s.nextInt();
+//            int y = s.nextInt();
+//            int z = s.nextInt();
+//            edges[x][y] = z;
+//            edges[y][x] = z;
+//            p=x;
+//        }
+//        p = 0 ;
+//
+//        int distance[] = new int[V];
+//        distance[0] = 0;
+//        for(int i = 0; i<V; ++i){
+//            if(i==p)
+//                continue;
+//
+//            distance[i] = Integer.MAX_VALUE;
+//        }
+//        makeMST(edges, distance, visited);
+//        for(int i = 0; i<V; ++i){
+//            System.out.println(i + " " + distance[i]);
+//        }
+//        s.close();
+//    }
 
 
 }

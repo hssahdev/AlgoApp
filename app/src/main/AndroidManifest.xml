@@ -41,6 +41,7 @@
             android:label="Fractional Knapsack"
             android:parentActivityName=".MainActivity" />
 
+
         <activity android:name=".Algos.Greedy_Kruskal"
             android:label="Make MST"
             android:parentActivityName=".MainActivity"/>
@@ -48,6 +49,14 @@
         <activity android:name=".Algos.Greedy_Djaktra"
             android:label="Shortest Path"
             android:parentActivityName=".MainActivity"/>
+
+
+        <activity android:name=".Adapters.GraphOutputAdapter" />
+        <activity android:name=".Algos.Greedy_Kruskal" />
+        <activity android:name=".Algos.Greedy_Djaktra" />
+        <activity android:name=".Algos.DP_Belllmanford"></activity>
+
+
 
     </application>
 

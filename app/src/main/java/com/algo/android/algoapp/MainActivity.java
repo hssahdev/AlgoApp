@@ -1,7 +1,7 @@
 package com.algo.android.algoapp;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,7 +14,9 @@ import com.algo.android.algoapp.Algos.DP_RodCutting;
 import com.algo.android.algoapp.Algos.DandC_mergeSort;
 import com.algo.android.algoapp.Algos.Greedy_Djaktra;
 import com.algo.android.algoapp.Algos.Greedy_FractonalKnapsack;
+
 import com.algo.android.algoapp.Algos.Greedy_Kruskal;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         categories.add("Dynamic Programming");
         categories.add("Greedy");
         categories.add("Divide and Conquer");
+        categories.add("Graph Algorithms");
         //categories.add("Graph Traversal");
 
 
@@ -88,16 +91,16 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     case "Fractional Kanpsack":
                         intent=new Intent(MainActivity.this,Greedy_FractonalKnapsack.class);
                         break;
-                    case "Prims Algorithm":
-                        intent = new Intent(MainActivity.this, Greedy_Kruskal.class);
-                        break;
-                    case "Kruskal Algorithm":
-                        intent = new Intent(MainActivity.this, Greedy_Kruskal.class);
-                        break;
-                    case "Djaktra Algorithm":
-                        intent = new Intent(MainActivity.this, Greedy_Djaktra.class);
-                        break;
 
+                    case "Dijkstra's Algo":
+                        intent=new Intent(MainActivity.this,Greedy_Djaktra.class);
+                        break;
+                    case "Prim's Algo":
+                        intent=new Intent(MainActivity.this,Greedy_Kruskal.class);
+                        break;
+                    case "Kruskal's Algo":
+                        intent=new Intent(MainActivity.this,Greedy_Kruskal.class);
+                        break;
                 }
                 startActivity(intent);
             }
