@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Enter no. of elemnts :"
+            android:text="Enter no. of elements :"
             android:layout_margin="10dp"
             android:textColor="@android:color/black"
             android:textSize="20sp"
@@ -39,7 +39,7 @@
             style="@style/Base.TextAppearance.AppCompat.Widget.Button.Colored"
             android:backgroundTint="@color/colorAccent"
             android:layout_marginRight="10dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:id="@+id/mergeSort_button"
             android:text="Enter"/>
     </LinearLayout>
@@ -109,13 +109,13 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
+                android:visibility="visible"
                 android:baselineAligned="false"
                 android:padding="10dp"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                tools:text="Sorted array is - " />
-
+                tools:text="Sorted array is : " />
 
 
         <android.support.v7.widget.RecyclerView

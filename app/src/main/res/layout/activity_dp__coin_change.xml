@@ -17,7 +17,7 @@
             android:text="Enter no of denomination:"
             android:layout_margin="10dp"
             android:textColor="@android:color/black"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:layout_gravity="center"
             android:id="@+id/coinchange_elements"/>
 
@@ -38,7 +38,7 @@
             style="@style/Base.TextAppearance.AppCompat.Widget.Button.Colored"
             android:backgroundTint="@color/colorAccent"
             android:layout_marginRight="10dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="5dp"
             android:id="@+id/coinchange_button"
             android:text="Enter"/>
     </LinearLayout>

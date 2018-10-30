@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         categories.add("Dynamic Programming");
         categories.add("Greedy");
         categories.add("Divide and Conquer");
-        categories.add("Graph Algorithms");
         //categories.add("Graph Traversal");
 
 
@@ -91,14 +90,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     case "Fractional Kanpsack":
                         intent=new Intent(MainActivity.this,Greedy_FractonalKnapsack.class);
                         break;
-
-                    case "Dijkstra's Algo":
+                    case "Dijkstra's Algorithm":
                         intent=new Intent(MainActivity.this,Greedy_Djaktra.class);
                         break;
-                    case "Prim's Algo":
+                    case "Prim's Algorithm":
                         intent=new Intent(MainActivity.this,Greedy_Kruskal.class);
                         break;
-                    case "Kruskal's Algo":
+                    case "Kruskal's Algorithm":
                         intent=new Intent(MainActivity.this,Greedy_Kruskal.class);
                         break;
                 }
@@ -128,9 +126,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             else if(item.contentEquals("Greedy")){
                 clear();
                 algos.add("Fractional Kanpsack");
-                algos.add("Prims Algorithm");
-                algos.add("Djaktra Algorithm");
-                algos.add("Kruskal Algorithm");
+                algos.add("Prim's Algorithm");
+                algos.add("Dijkstra's Algorithm");
+                algos.add("Kruskal's Algorithm");
                 spinner2.setOnItemSelectedListener(this);
                 spinner2.setEnabled(true);
 

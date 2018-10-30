@@ -22,10 +22,12 @@ public class Greedy_Djaktra extends AppCompatActivity {
         findViewById(R.id.dijkstra_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int noOfEdges = Integer.parseInt(((EditText)findViewById(R.id.dijstra_noOfTerms)).toString().trim());
+
+                EditText editText = findViewById(R.id.dijstra_noOfTerms);
+                int noOfEdges = Integer.parseInt(editText.getText().toString());
                 final TrippleArrayInputAdapter adapter = new TrippleArrayInputAdapter(noOfEdges);
                 RecyclerView recyclerView = findViewById(R.id.dijkstra_recycler);
-                recyclerView.setLayoutManager(new LinearLayoutManager(Greedy_Djaktra.this));
+                recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                 recyclerView.setAdapter(adapter);
 
                 findViewById(R.id.dijkstra_submitDataButton).setOnClickListener(new View.OnClickListener() {

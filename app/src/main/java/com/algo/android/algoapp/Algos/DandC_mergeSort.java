@@ -8,15 +8,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.algo.android.algoapp.Adapters.ArrayOutputAdapter;
-
 import com.algo.android.algoapp.Adapters.SingleArrayInputAdapter;
 import com.algo.android.algoapp.R;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class DandC_mergeSort extends AppCompatActivity {
@@ -49,6 +45,7 @@ public class DandC_mergeSort extends AppCompatActivity {
 
                        // int value = Integer.parseInt(((EditText)findViewById(R.id.coinchange_value)).getText().toString());
                         getAnswer(no,elements);
+                        findViewById(R.id.mergeSort_answer).setVisibility(View.VISIBLE);
                         DP_RodCutting.hideKeyboardFrom(getApplicationContext(), view);
                     }
                 });

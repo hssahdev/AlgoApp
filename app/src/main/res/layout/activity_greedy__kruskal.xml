@@ -10,6 +10,7 @@ tools:context=".Algos.Greedy_Kruskal">
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
+    android:gravity="center"
     android:orientation="horizontal">
     <TextView
         android:layout_width="wrap_content"
@@ -22,12 +23,11 @@ tools:context=".Algos.Greedy_Kruskal">
         android:id="@+id/kruskal_edges"/>
 
     <EditText
-        android:layout_width="20dp"
+        android:layout_width="50dp"
         android:layout_height="match_parent"
         android:layout_margin="2dp"
         android:inputType="number"
         android:gravity="center"
-        android:layout_weight="1"
         android:id="@+id/kruskal_noOfEdges"
         android:background="@drawable/edittext_background"
         />
@@ -39,6 +39,7 @@ tools:context=".Algos.Greedy_Kruskal">
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
+        android:gravity="center"
         android:orientation="horizontal">
         <TextView
             android:layout_width="wrap_content"
@@ -51,13 +52,11 @@ tools:context=".Algos.Greedy_Kruskal">
             android:id="@+id/kruskal_vertices"/>
 
         <EditText
-            android:layout_width="20dp"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_margin="2dp"
             android:inputType="number"
             android:gravity="center"
-
-            android:layout_weight="1"
             android:id="@+id/kruskal_noOfVertices"
             android:background="@drawable/edittext_background"
             />
